@@ -12,6 +12,7 @@ let genres=[
   {id:"triller", name:"Ужасы", icon:"&#128123;", colorFirst:"#828282", colorSecond:"#333333"}
 ];
 
+
 let header=document.getElementById("header");
 let footer=document.getElementById("footer");
 let nav=document.getElementById("tabs");
@@ -81,8 +82,8 @@ if (document.querySelector("#selectMovie").classList.contains("active")){
 }
 
 function login(){
-  document.querySelector(".bg").style.visibility="visible";
+  document.querySelector("#bg").style.display="flex";
 }
-document.querySelector(".bg").onClick=function(){
-  document.querySelector(".bg").style.visibility="hidden";
+document.querySelector(".close").onclick=function(){
+  document.querySelector("#bg").style.display="none";
 }

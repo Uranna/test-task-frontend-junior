@@ -21,27 +21,90 @@
           <li><a href="tv.html" id="selectTv" >Программа</a></li>
         </ul> -->
       </nav>
+
+      
       <section id="channels">
         <article class="channel">
-          <img src="" alt="">
-          <div class="schedule"></div>
+          <div class="image">
+            <img src="img/first.svg" alt="">
+          </div>
+          <div class="schedule">
+            <h1>Первый канал</h1>
+            <ul>
+              <li><span class="time">13:00</span><span class="program">Новости (с субтитрами)</span></li>
+              <li><span class="time">14:00</span><span class="program">Давай поженимся</span></li>
+              <li><span class="time">15:00</span><span class="program">Другие новости</span></li>
+            </ul>
+          </div>
         </article>
+
+        <article class="channel">
+          <div class="image">
+            <img src="img/2x2.svg" alt="">
+          </div>
+          <div class="schedule">
+            <h1>2x2</h1>
+            <ul>
+              <li><span class="time">13:00</span><span class="program">МУЛЬТ ТВ. Сезон 4, 7 серия</span></li>
+              <li><span class="time">14:00</span><span class="program">ПОДОЗРИТЕЛЬНАЯ СОВА. Сезон 7, 7 серия</span></li>
+              <li><span class="time">15:00</span><span class="program">БУРДАШЕВ. Сезон 1, 20 серия</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="channel">
+          <div class="image">
+            <img src="img/rbc.svg" alt="">
+          </div>
+          <div class="schedule">
+            <h1>РБК</h1>
+            <ul>
+              <li><span class="time">13:00</span><span class="program">ДЕНЬ. Горючая смесь: как бороться с суррогатом на АЗС</span></li>
+              <li><span class="time">14:00</span><span class="program">ДЕНЬ. Главные темы</span></li>
+              <li><span class="time">15:00</span><span class="program">Главные новости</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="channel">
+          <div class="image">
+            <img src="img/amedia.svg" alt="">
+          </div>
+          <div class="schedule">
+            <h1>AMEDIA PREMIUM</h1>
+            <ul>
+              <li><span class="time">13:00</span><span class="program">Клиент всегда мёртв</span></li>
+              <li><span class="time">14:00</span><span class="program">Голодные игры: Сойка-пересмешница. Часть I</span></li>
+              <li><span class="time">15:00</span><span class="program">Секс в большом городе</span></li>
+            </ul>
+          </div>
+        </article>
+
+
+
       </section>
     </main>
+
+
     <footer id="footer">
     </footer>
 
-    <div class="bg">
+    <div id="bg">
+      <div class="close"></div>
       <div class="modal">
         <form action="">
           <h1>Вход</h1>
           <input type="text" placeholder="Логин">
           <input type="password" placeholder="Пароль">
-          <input type="checkbox" value="Запомнить">
+          <div class="checkbox">
+            <input type="checkbox" value="rememberUser">
+          </div>
           <button class="btn">Войти</button>
         </form>
       </div>
     </div>
+
+
     <script src="script/main.js" charset="utf-8"></script>
 
   </body>

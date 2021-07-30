@@ -1,3 +1,3 @@
-# test-task-frontend-junior-
+# test-task-frontend-junior
 
-https://uranna.github.io/test-task-frontend-junior/index.html
+https://uranna.github.io/test-task-frontend-junior/

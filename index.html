@@ -7,8 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logo.svg" type="image/svg">
   </head>
-  <img src="" alt="">
+
   <body>
     <header id="header">
       <!-- <div class="logo">
@@ -55,17 +56,21 @@
       </section> -->
     </footer>
 
-    <div class="bg" onClick="">
+    <div id="bg">
+      <div class="close"></div>
       <div class="modal">
         <form action="">
           <h1>Вход</h1>
           <input type="text" placeholder="Логин">
           <input type="password" placeholder="Пароль">
-          <input type="checkbox" value="Запомнить">
+          <div class="checkbox">
+            <input type="checkbox" value="rememberUser">
+          </div>
           <button class="btn">Войти</button>
         </form>
       </div>
     </div>
+
     <script src="script/main.js" charset="utf-8"></script>
 
   </body>
