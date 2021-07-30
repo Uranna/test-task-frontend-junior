@@ -29,10 +29,10 @@ let str=`<div class="logo">
 header.insertAdjacentHTML("afterBegin", str);
 
 str=`<section class="size" itemscope="" itemtype="https://schema.org/Organization">
-  <img src="img/vector.svg" alt="" itemprop="logo" class="organization">
+  <img src="img/htc.svg" alt="" itemprop="logo" class="organization">
   <p class="organization" itemprop="address">426057, Россия, Удмуртская Республика, г. Ижевск, ул. Карла Маркса, 246 (ДК «Металлург»)</p>
   <p class="organization" itemprop="telephone"><a href="tel:+73412938861">+7 (3412) 93-88-61</a>, <a href="tel:432929">43-29-29</a></p>
-  <p class="organization" itemprop="url">htc-cs.ru</p>
+  <p class="organization" itemprop="url"><a href="https://htc-cs.ru">htc-cs.ru</a></p>
 </section>`;
 footer.insertAdjacentHTML("afterBegin", str);
 
