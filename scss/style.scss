@@ -2,40 +2,84 @@
   margin: 0;
   padding: 0;
   font-family: 'Rubik', sans-serif;
-  // font-size: 10px
+}
+
+a{
+  text-decoration: none;
 }
 
 @media(min-width:1220px){
+  .genre:nth-child(4n):not(:last-child), .movie:nth-child(4n):not(:last-child){
+    margin-bottom: 20px;
+  }
   .genre:not(:nth-child(4n)), .movie:not(:nth-child(4n)){
     margin-right: 20px;
   }
+  .films{
+    width: 1180px;
+  }
 }
 
-@media(max-width:1219px){
-  .genre, .movie{
+@media(max-width:1219px)and(min-width:920px){
+  .genre:nth-child(3n):not(:last-child), .movie:nth-child(3n):not(:last-child){
     margin-bottom: 20px;
   }
   .genre:not(:nth-child(3n)), .movie:not(:nth-child(3n)){
     margin-right: 20px;
   }
+  .new, .genres{
+    width: 880px;
+  }
 }
 
-@media(max-width:620px){
+@media(max-width:919px)and(min-width: 620px){
+  .genre:nth-child(2n):not(:last-child), .movie:nth-child(2n):not(:last-child),{
+    margin-bottom: 20px;
+  }
+
   .genre:not(:nth-child(2n)), .movie:not(:nth-child(2n)){
     margin-right: 20px;
   }
-}
-
-@media(max-width:320px){
-  .genre, .movie{
-    margin-right: 0;
+  .new, .genres{
+    width: 580px;
   }
 }
 
+@media(max-width:619px){
+  .genre:not(:last-child), .movie:not(:last-child){
+    margin-bottom: 20px;
+  }
+
+  .genre, .movie{
+    margin-right: 0;
+  }
+  .new, .genres{
+    width: 280px;
+  }
+}
+
+@media(max-width:800px){
+  #header {
+    .title{
+      position: absolute;
+      visibility: hidden;
+    }
+
+    .search{
+      width: 282px;
+      justify-content: flex-end;
+    }
+
+    input[type="text"]{
+      width: 200px;
+    }
+  }
+}
 
 $red: #E5261E;
 $hoverRed: #CC221B;
 $gray: #333333;
+$gray4: #BDBDBD;
 $bg: #F2F2F2;
 $htc: #1F4766;
 
@@ -46,20 +90,34 @@ $htc: #1F4766;
   color:$color;
 }
 
+body::-webkit-scrollbar, #channels::-webkit-scrollbar{
+  width: 8px;
+}
+body::-webkit-scrollbar-track, #channels::-webkit-scrollbar-track{
+  background: $bg;
+  border-radius: 2px;
+}
+body::-webkit-scrollbar-thumb, #channels::-webkit-scrollbar-thumb{
+  background: $gray4;
+  border-radius: 2px;
+  width: 4px;
+}
+
+
 #header{
   max-width: 1180px;
   height: 36px;
   padding: 0 20px;
 
-  position: relative;
   margin: 32px auto 0;
-  display:flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 
   .logo{
     display: flex;
     align-items: center;
+
   }
 
   .title{
@@ -72,17 +130,53 @@ $htc: #1F4766;
   .search{
     width: 402px;
     height: 25px;
+    margin: 0 auto;
+    padding: 0 20px;
 
     display: flex;
     align-items: center;
+  }
 
+  a{
+    margin-left: 32px;
+    padding-bottom: 6px;
 
-    a{
-      margin-left: 32px;
-      padding-bottom: 6px;
-      text-decoration: none;
+    @include font(16px, 19px, $red, 500);
+  }
 
-      @include font(16px, 19px, $red, 500);
+  #authorization{
+    white-space: nowrap;
+
+    .log-out{
+        @include font(16px, 19px, $red, 500);
+        border: none;
+        background: none;
+        cursor: pointer;
+
+        &:hover{
+          color:$hoverRed;
+        }
+    }
+  }
+
+  #name{
+    @include font(16px, 19px, $gray, 500);
+    margin-right: 16px;
+    padding-bottom: 6px;
+    border: none;
+    width: 100px;
+    text-align:right;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover{
+      cursor: pointer;
+    }
+
+    &:focus{
+      border-bottom: 1px solid $gray;
     }
   }
 }
@@ -91,8 +185,10 @@ $htc: #1F4766;
   position: relative;
   margin: 44px auto 40px;
   max-width: 1180px;
+  width: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 0 20px;
 
 
@@ -114,7 +210,6 @@ $htc: #1F4766;
     a{
       box-sizing: border-box;
       padding-bottom: 9px;
-      text-decoration: none;
       color: inherit;
     }
 
@@ -127,6 +222,7 @@ $htc: #1F4766;
   .title{
     margin: 0 0 16px;
     @include font(24px, 28px, $weight:500);
+    display: inline-block;
   }
 
   .fire{
@@ -137,7 +233,9 @@ $htc: #1F4766;
 
   .films{
     display: flex;
-    justify-content: space-between;
+    width: auto;
+    // justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     margin-bottom: 32px;
   }
@@ -200,6 +298,8 @@ $htc: #1F4766;
   .genre{
     width: 280px;
     height: 208px;
+
+
     position: relative;
     opacity: 0.8;
     box-shadow: inset 0px 0px 16px rgba(0, 0, 0, 0.15);
@@ -230,8 +330,8 @@ $htc: #1F4766;
 // ПОДВАЛ
 #footer{
   background: $bg;
-  width: 100%;
-  height: 120px;
+  min-height: 120px;
+  height: auto;
   padding: 0 20px;
 
 
@@ -243,7 +343,7 @@ $htc: #1F4766;
 
   img{
     height: 64px;
-    margin: 28px 40px 0 0;
+    margin: 28px 40px 28px 0;
     float: left;
   }
 
@@ -258,7 +358,6 @@ $htc: #1F4766;
       margin-top: 10px;
     }
     a{
-      text-decoration: none;
       color: inherit;
     }
   }
@@ -271,7 +370,7 @@ $htc: #1F4766;
   border-radius: 4px;
   background: $red;
 
-  @include font(16px, 19px, #FFFFFF, $red);
+  @include font(16px, 19px, #FFFFFF, 500);
   cursor: pointer;
 
   &:hover{
@@ -296,6 +395,46 @@ input[type="text"], input[type="password"]{
   }
 }
 
+.checkbox{
+  display: flex;
+  align-items: center;
+
+  input[type="checkbox"]{
+    display: none;
+
+    &:checked{
+      &~.checkbox-custom{
+        &::after{
+          content: '\2713';
+          color: $red;
+        }
+      }
+    }
+  }
+  .checkbox-custom{
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $gray;
+    border-radius: 4px;
+    margin-right: 8px;
+
+    position: relative;
+
+    &::after{
+      content: '';
+      position: absolute;
+      top: -3px;
+      left:2px;
+    }
+  }
+
+  .checkbox-text{
+    @include font(16px, 19px);
+  }
+}
+
+// МОДАЛЬНОЕ ОКНО
 #bg{
   width: 100%;
   height: 100%;
@@ -342,35 +481,23 @@ input[type="text"], input[type="password"]{
     margin-bottom: 24px;
   }
 
-  .checkbox{
-    margin-bottom: 111px;
-
-    input{
-      margin-right: 8px;
-
-      &::after{
-        content:"Запомнить";
-        @include font(16px, 19px);
-        // display:
-
-      }
-    }
-  }
 
   .btn{
-    margin: 0 auto;
-    display: block;
+    // margin: 0 auto;
+    // display: block;
+    position: absolute;
+    bottom: 36px;
+    left: 96px;
   }
 }
 
-
 #channels{
-  max-width: 1180px;
+  width: 100%;
+
   height: 686px;
   overflow-y: auto;
   overflow-x: hidden;
-  // margin: 0 auto 10px;
-  margin-right: 10px;
+  padding-right: 10px;
   display: flex;
   flex-direction: column;
 
@@ -390,24 +517,33 @@ input[type="text"], input[type="password"]{
     }
 
   .image{
+    width: 40%;
     max-width: 360px;
-    flex-basis: 360px;
+    min-width: 160px;
+
     display: flex;
     justify-content: center;
     align-items:center;
     margin: 0 20px;
-
   }
+
   .schedule{
+    width: 60%;
     padding: 21px 0 19px;
     float: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
     h1{
       margin-bottom: 17px;
       @include font(20px, 24px, $weight:500);
     }
+
     ul{
       list-style-type: none;
     }
+
     li{
       display: block;
       @include font(16px, 19px);
@@ -420,25 +556,16 @@ input[type="text"], input[type="password"]{
       &:not(:last-of-type){
         padding-bottom: 12px;
       }
+
       &:first-of-type{
         color:$red;
       }
     }
+
     .time{
       display: inline-block;
       margin-right: 16px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
     }
-    .program{
-      display: inline-block;
-      max-width: 694px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-
   }
-  }
+}
 }
