@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (min-width: 1220px) {
+  .genre:not(:nth-child(4n)),
+  .movie:not(:nth-child(4n)) {
+    margin-right: 20px;
+  }
+
+  .genre:nth-child(4n):not(:last-child),
+  .movie:nth-child(4n):not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .films {
+    width: 1180px;
+  }
+}
+
+@media (max-width: 1219px) and (min-width: 920px) {
+  .genre:not(:nth-child(3n)),
+  .movie:not(:nth-child(3n)) {
+    margin-right: 20px;
+  }
+
+  .genre:nth-child(3n):not(:last-child),
+  .movie:nth-child(3n):not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .new,
+  .genres {
+    width: 880px;
+  }
+}
+
+@media (max-width: 919px) and (min-width: 620px) {
+  .genre:not(:nth-child(2n)),
+  .movie:not(:nth-child(2n)) {
+    margin-right: 20px;
+  }
+
+  .genre:nth-child(2n):not(:last-child),
+  .movie:nth-child(2n):not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .new,
+  .genres {
+    width: 580px;
+  }
+}
+
+@media (max-width: 619px) {
+  .genre,
+  .movie {
+    margin-right: 0;
+  }
+
+  .genre:not(:last-child),
+  .movie:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .new,
+  .genres {
+    width: 280px;
+  }
+}
+
+@media (max-width: 800px) {
+  #header {
+    .title {
+      position: absolute;
+      visibility: hidden;
+    }
+
+    .search {
+      width: 282px;
+      justify-content: flex-end;
+    }
+
+    input[type="text"] {
+      width: 200px;
+    }
+  }
+}
+
+.btn {
+  width: 113px;
+  height: 38px;
+  border: none;
+  border-radius: 4px;
+  background: $red;
+  cursor: pointer;
+
+  @include font(16px, 19px, #FFFFFF, 500);
+
+  &:hover {
+    background: $hoverRed;
+  }
+}
+
+input[type="text"],
+input[type="password"] {
+  border: none;
+  border-bottom: 1px solid $gray;
+  padding-bottom: 6px;
+  width: 320px;
+  height: 25px;
+  background: none;
+  box-sizing: border-box;
+
+  @include font(16px, 19px);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+body::-webkit-scrollbar,
+#channels::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track,
+#channels::-webkit-scrollbar-track {
+  background: $bg;
+  border-radius: 2px;
+}
+
+body::-webkit-scrollbar-thumb,
+#channels::-webkit-scrollbar-thumb {
+  background: $gray4;
+  border-radius: 2px;
+  width: 4px;
+}

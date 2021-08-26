@@ -1,0 +1,32 @@
+#footer {
+  background: $bg;
+  min-height: 120px;
+  height: auto;
+  padding: 0 20px;
+
+  .container {
+    height: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  img {
+    height: 64px;
+    margin: 28px 40px 28px 0;
+    float: left;
+  }
+
+  p {
+    margin-bottom: 6px;
+    position: relative;
+    top: 22px;
+
+    @include font(16px, 19px);
+
+    &:last-child {
+      margin-top: 10px;
+
+      @include font(16px, 19px, $htc, 500);
+    }
+  }
+}

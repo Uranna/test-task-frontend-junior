@@ -1,0 +1,74 @@
+#header {
+  max-width: 1180px;
+  height: 36px;
+  padding: 0 20px;
+  margin: 32px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .title {
+    display: inline-block;
+    margin-left: 11px;
+
+    @include font(20px, 24px, $weight: 500);
+  }
+
+  .search {
+    width: 402px;
+    height: 25px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    margin-left: 32px;
+    padding-bottom: 6px;
+
+    @include font(16px, 19px, $red, 500);
+  }
+
+  #authorization {
+    white-space: nowrap;
+
+    .log-out {
+      border: none;
+      background: none;
+      cursor: pointer;
+
+      @include font(16px, 19px, $red, 500);
+
+      &:hover {
+        color: $hoverRed;
+      }
+    }
+  }
+
+  #name {
+    margin-right: 16px;
+    padding-bottom: 6px;
+    border: none;
+    width: 100px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include font(16px, 19px, $gray, 500);
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $gray;
+    }
+  }
+}

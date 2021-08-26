@@ -1,0 +1,33 @@
+{
+  "extends": stylelint-config-standard,
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "mixin",
+          "extends",
+          "ignores",
+          "function",
+          "include",
+          "if"
+        ]
+      }
+    ],
+
+    "no-empty-source": null,
+    "declaration-empty-line-before": null,
+    "no-missing-end-of-source-newline": null,
+    "scss/selector-no-redundant-nesting-selector": [false],
+    "no-eol-whitespace": [
+      true, 
+      {
+        ignore: ["empty-lines"]
+      }
+    ]
+
+  }
+}

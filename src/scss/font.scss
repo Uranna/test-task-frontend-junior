@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'Rubik';
+  src: url('./font/Rubik-Regular.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('./font/Rubik-Medium.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin font ($size, $height, $color: $gray, $weight: 400) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+  color: $color;
+}
